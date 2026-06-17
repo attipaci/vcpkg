@@ -1,0 +1,15 @@
+diff --git a/cmake/supernovasConfig.cmake.in b/cmake/supernovasConfig.cmake.in
+index 99a0f18d2..bb51dd584 100644
+--- a/cmake/supernovasConfig.cmake.in
++++ b/cmake/supernovasConfig.cmake.in
+@@ -4,6 +4,10 @@
+ 
+ include(CMakeFindDependencyMacro)
+ 
++if(NOT @WITHOUT_CURL@)
++    find_dependency(CURL)
++endif()
++
+ # Include targets
+ include("${CMAKE_CURRENT_LIST_DIR}/supernovasTargets.cmake")
+ 
